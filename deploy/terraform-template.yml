@@ -10,7 +10,7 @@ stages:
 - stage: 'Terraform_Plan'
   displayName: 'Terraform Plan'
   jobs:
-  - jobs: 'Terraform_Plan'
+  - job: 'Terraform_Plan'
     pool:
       vmImage: 'ubuntu-latest'
     steps:
