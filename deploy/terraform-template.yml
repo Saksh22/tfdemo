@@ -45,6 +45,6 @@ stages:
               echo "Running Terraform apply"
               terraform apply -var-file ${{ parameters.tfvarsFile }} -auto-approve
             displayName: 'Terraform apply'
-          workingDirectory: ${{ parameters.rootFolder }}
-          env:
-            ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
+            workingDirectory: ${{ parameters.rootFolder }}
+            env:
+              ARM_CLIENT_SECRET: $(ARM_CLIENT_SECRET)
