@@ -12,7 +12,7 @@ stages:
   jobs:
   - job: 'Terraform_Plan'
     pool:
-      vmImage: 'ubuntu-latest'
+      name: SelfHostedPool
     steps:
     - script: |
         echo "Running Terraform init"
@@ -32,7 +32,7 @@ stages:
   jobs:
   - deployment: 'Terraform_Apply'
     pool:
-      vmImage: 'ubuntu-latest'
+      name: SelfHostedPool
     environment: ${{ parameters.adoEnvironment }}
     strategy:
       runOnce:
