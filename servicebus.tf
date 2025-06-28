@@ -20,15 +20,17 @@ resource "azurerm_servicebus_namespace" "sbus" {
 }
 
 resource "azurerm_servicebus_topic" "sbus_topic" {
-    name = "${var.project}-${var.environment}-topic"
-    resource_group_name = azurerm_resource_group.rg.name
-    namespace_name = azurerm_servicebus_namespace.sbus.name
-    enable_partitioning = true
-    max_size_in_megabytes = 1024
-    default_message_time_to_live = "P14D"
-    status = "Active"
-    tags = local.tags
+  name         = "${var.project}-${var.environment}-topic"
+  namespace_id = azurerm_servicebus_namespace.sbus.id
+
+  enable_partitioning       = true
+  max_size_in_megabytes     = 1024
+  default_message_ttl       = "PT14D"
+  status                    = "Active"
+
+  tags = local.tags
 }
+
 
 resource "azurerm_servicebus_queue" "sbus_queue" {
     name = "queue01"
