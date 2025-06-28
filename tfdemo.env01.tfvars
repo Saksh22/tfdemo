@@ -1,3 +1,3 @@
-project              = "tfdemo"
-environment          = "env01"
-location             = "uksouth"
+project     = "tfdemo"
+environment = "env01"
+location    = "uksouth"

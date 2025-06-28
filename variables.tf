@@ -1,11 +1,11 @@
 variable "project" {
-    type        = string
-    description = "The name of the project"
+  type        = string
+  description = "The name of the project"
 }
 
 variable "environment" {
-    type        = string
-    description = "The environment (e.g., env1, env2)"
+  type        = string
+  description = "The environment (e.g., env1, env2)"
 }
 
 variable "location" {
