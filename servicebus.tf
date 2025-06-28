@@ -5,7 +5,6 @@ resource "azurerm_servicebus_namespace" "sbus" {
 
     
     local_auth_enabled = false
-    min_tls_version = "1.2"
 
     network_rule_set {
         default_action = "Allow"
