@@ -27,7 +27,7 @@ resource "azurerm_servicebus_topic" "sbus_topic" {
   default_message_ttl       = "PT14D"
   status                    = "Active"
 
-  tags = local.tags
+#   tags = local.tags
 }
 
 
@@ -35,7 +35,7 @@ resource "azurerm_servicebus_queue" "sbus_queue" {
     name = "queue01"
     namespace_id = azurerm_servicebus_namespace.sbus.id
 
-    default_message_time_to_live = "P14D"
+    default_message_ttl = "P14D"
     dead_lettering_on_message_expiration = true
     duplicate_detection_history_time_window = "PT10M"
     enable_batched_operations = true
